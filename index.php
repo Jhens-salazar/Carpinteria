@@ -17,7 +17,7 @@ session_start();
 </head>
 
 <body>
-
+<h2>HOLO</h2>
     <!-- formulario realizar pedido -->
     <!-- Contenedor de la ventana modal -->
     <div class="ventana6" id="vent6">
