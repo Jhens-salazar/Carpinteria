@@ -21,6 +21,7 @@ if (isset($_POST['sesion'])) {
             // Guardar la información del usuario en la sesión
             $_SESSION['id_usuario'] = $row['id_cliente'];
             $_SESSION['username'] = $row['nombres'];
+            $_SESSION['apel'] = $row['apellidos'];
             $_SESSION['rol'] = $row['rol'];
             echo $_SESSION['id_usuario'];	    
             if ($row['rol'] == 1) {
@@ -36,6 +37,7 @@ if (isset($_POST['sesion'])) {
             // Guardar la información del usuario en la sesión
             $_SESSION['id_usuario'] = $row['id_cliente'];
             $_SESSION['username'] = $row['nombres'];
+            $_SESSION['apel'] = $row['apellidos'];
             $_SESSION['rol'] = $row['rol'];
             echo $_SESSION['id_usuario'];	    
             if ($row['rol'] == 1) {
@@ -46,9 +48,7 @@ if (isset($_POST['sesion'])) {
                 echo '<script>window.location.href = "./index.php";</script>';
             }
             exit();
-        } 
-        
-        else {
+        } else {
             // Si la contraseña no es válida, mostrar un mensaje de error
             echo "<script>Swal.fire('Contraseña incorrecta, Intentelo nuevamente')</script>";
         }

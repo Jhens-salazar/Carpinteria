@@ -1,5 +1,16 @@
 <?php
 session_start();
+if(isset($_SESSION['id_usuario'])){
+    $nombre=$_SESSION['username'];
+    $apellido=$_SESSION['apel'];
+    $roll=$_SESSION['rol'];
+
+    if($roll==1){
+        echo '<script>window.location.href = "assets/admin/admin.php";</script>';
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +28,6 @@ session_start();
 </head>
 
 <body>
-<h2>HOLO</h2>
     <!-- formulario realizar pedido -->
     <!-- Contenedor de la ventana modal -->
     <div class="ventana6" id="vent6">

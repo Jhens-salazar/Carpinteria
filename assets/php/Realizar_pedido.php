@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +15,12 @@
     <div class="cont">
         <h1>Realiza tu pedido</h1>
 
-        <form action="/controler_realiza.php" method="post" enctype="multipart/form-data" class="formulario">
+        <form action="assets/php/controler_realiza.php" method="post" enctype="multipart/form-data" class="formulario">
             <!-- Información del Cliente -->
 
             <div class="conten1">
-
-
+                <input type="hidden" name="nombre" value="<?php echo $nombre; ?>">
+                <input type="hidden" name="apellido" value="<?php echo $apellido; ?>">
                     <article class="space">
                         <label for="contacto">Contacto:</label>
                         <input type="tel" id="contacto" name="contacto" required>

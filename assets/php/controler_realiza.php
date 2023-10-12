@@ -26,18 +26,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $altura = limpiarEntrada($_POST["altura"]);
     $largo = limpiarEntrada($_POST["largo"]);
     $comentario = limpiarEntrada($_POST["comentario"]);
-
-    // Consulta preparada
-    $sql = $conn->prepare("INSERT INTO pedidos (nombre, apellido, contacto, email, tipo, material, acabado, fecha, ancho, altura, largo, comentario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $sql->bind_param("ssssssssssss", $nombre, $apellido, $contacto, $email, $tipo, $material, $acabado, $fecha, $ancho, $altura, $largo, $comentario);
-
-    if ($sql->execute()) {
-        echo "Pedido registrado con éxito";
-    } else {
-        echo "Error al registrar el pedido: " . $conn->error;
+    
+    // Subir la imagen
+    $target_dir = "../../imagenes/"; // Carpeta donde se guardará la imagen
+    $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    // Verificar si el archivo es una imagen real
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["imagen"]["tmp_name"]);
+        if($check !== false) {
+            echo "El archivo es una imagen - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "El archivo no es una imagen.";
+            $uploadOk = 0;
+        }
     }
+    
+    // Verificar si el archivo ya existe
+    if (file_exists($target_file)) {
+        echo "Lo siento, el archivo ya existe.";
+        $uploadOk = 0;
+    }
+    
+    // Verificar el tamaño del archivo
+    if ($_FILES["imagen"]["size"] > 500000) {
+        echo "Lo siento, el archivo es demasiado grande.";
+        $uploadOk = 0;
+    }
+    
+    // Permitir ciertos formatos de archivo
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+        echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
+        $uploadOk = 0;
+    }
+    
+    // Verificar si $uploadOk está establecido en 0 por un error
+    if ($uploadOk == 0) {
+        echo "Lo siento, tu archivo no fue subido.";
+    // Si todo está bien, intentar subir el archivo
+    } else {
+        if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
+            echo "El archivo ". htmlspecialchars( basename( $_FILES["imagen"]["name"])). " ha sido subido.";
 
-    $sql->close();
+            // Solo almacenar el nombre del archivo en la base de datos
+            $nombreArchivo = htmlspecialchars(basename($_FILES["imagen"]["name"]));
+
+            // Consulta preparada
+            $sql = $conn->prepare("INSERT INTO pedidos (nombre, apellido, contacto, email, tipo, material, acabado, fecha, ancho, altura, largo, comentario, imagen_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql->bind_param("sssssssssssss", $nombre, $apellido, $contacto, $email, $tipo, $material, $acabado, $fecha, $ancho, $altura, $largo, $comentario, $nombreArchivo);
+
+            if ($sql->execute()) {
+                echo '<script>alert("Pedido realizado con éxito");window.location.href = "../../index.php";</script>';
+            } else {
+                echo "Error al registrar el pedido: " . $conn->error;
+            }
+
+            $sql->close();
+        } else {
+            echo "Lo siento, hubo un error al subir tu archivo.";
+        }
+    }
 }
 
 // Cerrar conexión

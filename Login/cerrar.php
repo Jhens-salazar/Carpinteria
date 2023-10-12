@@ -2,14 +2,14 @@
 
 session_start();
 error_reporting(0);
-$varsesion = $_SESSION['id_usuario'];
-
-if($varsesion == null || $varsesion = '' ){
-    echo "<script>window.location='../Login/index.php'</script>";
-    die();
-}else {
-    echo "<script>Swal.fire('No autorizacion')</script>";
-}
-session_unset();
+$rol=$_SESSION['rol'];
+if($rol==1){
+    session_unset();
+    session_destroy();
+    header("location: ../Login/index.php");
+}else{
+    session_unset();
 session_destroy();
 header("location: ../index.php");
+}
+
