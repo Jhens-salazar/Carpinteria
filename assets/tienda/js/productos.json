@@ -1,0 +1,152 @@
+[
+    {
+        "id": "armario-01",
+        "titulo": "Armario en Madera",
+        "imagen": "./img/armarios/01.png",
+        "categoria": {
+            "nombre": "Armarios",
+            "id": "armarios"
+        },
+        "precio": 1200000
+    },
+    {
+        "id": "armario-02",
+        "titulo": "Armario en Madera",
+        "imagen": "./img/armarios/02.png",
+        "categoria": {
+            "nombre": "Armarios",
+            "id": "armarios"
+        },
+        "precio": 1000000
+    },
+    {
+        "id": "armario-03",
+        "titulo": "Armario en Madera",
+        "imagen": "./img/armarios/03.png",
+        "categoria": {
+            "nombre": "Armarios",
+            "id": "armarios"
+        },
+        "precio": 8000000
+    },
+    {
+        "id": "Armario-04",
+        "titulo": "Armario en Madera",
+        "imagen": "./img/armarios/04.png",
+        "categoria": {
+            "nombre": "Armarios",
+            "id": "armarios"
+        },
+        "precio": 1200000
+    },
+    {
+        "id": "Armario-05",
+        "titulo": "Armario en Madera",
+        "imagen": "./img/armarios/05.png",
+        "categoria": {
+            "nombre": "Armarios",
+            "id": "armarios"
+        },
+        "precio": 9000000
+    },
+    {
+        "id": "nochero-01",
+        "titulo": "Nochero en madera",
+        "imagen": "./img/nocheros/01.png",
+        "categoria": {
+            "nombre": "Nocheros",
+            "id": "nocheros"
+        },
+        "precio": 1000000
+    },
+    {
+        "id": "nochero-02",
+        "titulo": "Nochero en madera",
+        "imagen": "./img/nocheros/02.png",
+        "categoria": {
+            "nombre": "Nocheros",
+            "id": "nocheros"
+        },
+        "precio": 900000
+    },
+    {
+        "id": "nochero-03",
+        "titulo": "Nochero en madera",
+        "imagen": "./img/nocheros/03.png",
+        "categoria": {
+            "nombre": "Nocheros",
+            "id": "nocheros"
+        },
+        "precio": 600000
+    },
+    {
+        "id": "nochero-04",
+        "titulo": "Nochero en madera",
+        "imagen": "./img/nocheros/04.png",
+        "categoria": {
+            "nombre": "Nocheros",
+            "id": "nocheros"
+        },
+        "precio": 1200000
+    },
+    {
+        "id": "nochero-05",
+        "titulo": "Nochero en madera",
+        "imagen": "./img/nocheros/05.png",
+        "categoria": {
+            "nombre": "Nocheros",
+            "id": "nocheros"
+        },
+        "precio": 400000
+    },
+    {
+        "id": "cocina-01",
+        "titulo": "Cocinas en Madera",
+        "imagen": "./img/cocinas/01.png",
+        "categoria": {
+            "nombre": "Cocinas",
+            "id": "cocinas"
+        },
+        "precio": 2200000
+    },
+    {
+        "id": "cocina-02",
+        "titulo": "Cocinas en Madera",
+        "imagen": "./img/cocinas/02.png",
+        "categoria": {
+            "nombre": "Cocinas",
+            "id": "cocinas"
+        },
+        "precio": 1700000
+    },
+    {
+        "id": "cocina-03",
+        "titulo": "Cocinas en Madera",
+        "imagen": "./img/cocinas/03.png",
+        "categoria": {
+            "nombre": "Cocinas",
+            "id": "cocinas"
+        },
+        "precio": 5000000000
+    },
+    {
+        "id": "cocina-04",
+        "titulo": "Cocinas en Madera",
+        "imagen": "./img/cocinas/04.png",
+        "categoria": {
+            "nombre": "Cocinas",
+            "id": "cocinas"
+        },
+        "precio": 2200000
+    },
+    {
+        "id": "cocina-05",
+        "titulo": "Cocinas en Madera",
+        "imagen": "./img/cocinas/05.png",
+        "categoria": {
+            "nombre": "Cocinas",
+            "id": "cocinas"
+        },
+        "precio": 2200000
+    }
+]

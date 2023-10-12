@@ -1,0 +1,239 @@
+:root {
+    --VerdeBosque:#228B22;
+    --MarrónMadera:#8B4513;
+    --GrisOscuro:#333333;
+    --blanco: #fffefe;
+    --grisClaro : #f1f2f5;
+    --Dorado :#FFD700;
+    --BlancoRoto :#F5F5F5;
+  
+  }
+.cont {
+    display: flex;
+    padding: 10px 0px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: var(--VerdeBosque);
+
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 19px;
+}
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    gap: 12px;
+    background-color: #ffffff;
+    color: var(--VerdeBosque);
+    border-top: 1px solid black;
+}
+
+.conten1 {
+    display: flex;
+    width: 100%;
+    height: 6em;
+    align-items: center;
+
+
+}
+.space {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+.space input{
+    font-size: 20px;
+    border-radius: 5px;
+}
+.conten2 {
+    display: flex;
+    width: 98%;
+    height: 45em;
+    flex: 1;
+    padding: 5px;
+
+
+}
+.conten_int{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+
+}
+.space2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+.conten_int h3{
+    width: 200px;
+    padding-left: 5px;
+}
+
+.space2 input{
+    font-size: 15px;
+    border-radius: 5px;
+}
+.conten_int2{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.space3{
+    display: flex;
+    height: 3em;
+    padding: 10px;
+    flex-direction: column;
+}
+.space3 input{
+    font-size: 15px;
+    border-radius: 5px;
+}
+.conten_int2 h3{
+    width: 200px;
+    right:2.3em ;
+}
+textarea {
+    width: 260px;
+    height:40px;
+}
+
+.conten3 {
+    display: flex;
+    padding-bottom: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.space4{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+
+input[type="submit"] {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos-cliente {
+    margin-bottom: 20px;
+}
+
+.detalles-producto {
+    margin-bottom: 20px;
+}
+
+.comentario {
+    margin-bottom: 20px;
+}
+
+.imagen {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+@media only screen and (max-width:414px) {
+    .cont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        flex: 1;
+        overflow-y: scroll;
+    }
+    .conten1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 50vh;
+        justify-content: flex-start;
+        gap: 0px;
+    }
+   
+    .space input{
+        font-size: 17px;
+    }
+    .space label{
+        font-size: 15px;
+    }
+    
+    .conten2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+      
+    }
+    .conten_int{
+        width: 100%;
+    }
+    .space2{
+        width: 90%;
+      
+    }
+    .space2 input{
+        font-size: 15px;
+    }
+    .conten_int2{
+        width: 100%;
+    }
+    .space3{
+        width: 90%;
+
+    }
+    .conten3{
+        display: flex;
+        padding-bottom: 30px;
+        flex-direction: column;
+    }
+}
